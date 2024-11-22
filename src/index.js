@@ -28,9 +28,8 @@ let host;
 if (window.location.hostname === "localhost") {
   host = "http://localhost:8080";
 } else {
-  host = "http://ec2-43-201-100-137.ap-northeast-2.compute.amazonaws.com:8080";
+  host = "/api";
 }
-console.log(host);
 
 // 앱이 시작될 때 스토리지에 있는 로그인 정보를 확인하여 로그인상태 유지
 
