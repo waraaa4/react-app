@@ -7,7 +7,10 @@ import { CustomCard, CustomContainer } from "../components/Styles";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+
+import { Context } from "../index";
+import { useContext } from "react";
+
 // 아이템을 비율로 배치
 const Row = styled.div`
   display: grid;
@@ -20,12 +23,15 @@ function BoardList() {
   // 리스트를 state로 생성
   const [data, setData] = useState([]);
 
+  // 컨텍스트에서 host 데이터 가져오기
+  const { host } = useContext(Context);
+
   useEffect(() => {
     // 게시물 목록 요청 API
     const getDatea = async () => {
       // 주소, 헤더
       // 192.168.0.67
-      const response = await axios.get("http://localhost:8080/board/list", {
+      const response = await axios.get(`${host}/board/list`, {
         headers: {
           Authorization:
             "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzIyMzY1NzAsImV4cCI6MTczNDgyODU3MCwic3ViIjoiYWRtaW4ifQ.Dtn4_L2GYHCWiDcKaN4rf5e3CYBlxH8YQ4EJFFR4tig",
