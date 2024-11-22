@@ -31,6 +31,8 @@ if (window.location.hostname === "localhost") {
   host = "/api";
 }
 
+console.log(host);
+
 // 앱이 시작될 때 스토리지에 있는 로그인 정보를 확인하여 로그인상태 유지
 
 // 로그인 정보 유지하기
