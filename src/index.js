@@ -9,7 +9,7 @@ import { createContext } from "react";
 import store from "./store/store";
 import { login } from "./store/memberSlice";
 
-// createContext: 여러 컴포넌트에서 값을 공유할 때 사용.
+// createContext: 여러 컴포넌트에서 값을 공유할 때 사용
 // 스토어, 슬라이스: 여러 컴포넌트에서 state를 공유할 때 사용
 // context 생성하고 export
 export const Context = createContext();
